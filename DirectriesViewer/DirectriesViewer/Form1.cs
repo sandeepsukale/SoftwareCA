@@ -24,9 +24,13 @@ namespace DirectriesViewer
             openFileDialog1.InitialDirectory = "c:\\";
             openFileDialog1.Multiselect = true;
            openFileDialog1.RestoreDirectory = false;
-           
-           
+
+            this.Sdir.SelectedIndexChanged += new EventHandler(Sdir_SelectedIndexChanged);
+
+
         }
+
+            
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -39,17 +43,14 @@ namespace DirectriesViewer
                 var filePath = folderBrowserDialog1.SelectedPath;
                
                     var files = Path.GetDirectoryName(filePath);
-
-                    string[] fileEntries = Directory.GetFiles(filePath);//list of all the file names in the directory
+                
+                string[] fileEntries = Directory.GetFiles(filePath);//list of all the file names in the directory
                     displayText.Text = filePath;
 
-                    List<string> items = new List<string>();
-                    List<string> sortedfiles = new List<string>();
-                    List<string> Allsortedfiles = new List<string>();
+                    
                     List<string> calcfile = new List<string>();
-                    items.Add(Path.GetFullPath(filePath));
 
-
+                    
                     foreach (string fileName in fileEntries)//method to sort each file in file names
                     {
                         StreamReader str = new StreamReader(fileName);
@@ -61,8 +62,19 @@ namespace DirectriesViewer
 
                     if (Path.GetExtension(fileName) == ".txt")
                     {
-                        
-                         string[] sorted= FileContent.Split(' ');
+                        int count = 0;
+
+                        string[] trimmed = FileContent.Split(' ');
+                        string[] sorted = new string[trimmed.Length];
+
+                        int trimCount = 0;
+                        foreach (string test in trimmed)
+                        {
+                            sorted.SetValue(test.TrimEnd('.', ','), trimCount);
+
+                            trimCount++;
+                        }
+
 
                         Array.Sort(sorted);
 
@@ -72,41 +84,65 @@ namespace DirectriesViewer
                         if (!File.Exists(path))
                         {
 
-                           
+                            int counter = 0;
                             StreamWriter sw = new StreamWriter(path);
                             foreach (string item in sorted)
                             {
                                 
+                                count = Sort.Count(item, sorted);
+                                if (count > 1)
+                                {
+
+
+                                    if (item == sorted[counter])
+                                    {
+                                        continue;
+                                        
+
+                                    }
+                                    else { sw.WriteLine(item + " ," + count); }
+                                }
+
+                                else if (count == 1)
+                                {
+
+
                                     sw.WriteLine(item);
-                                
-                               
+                                }
+                                 
+
+                           
+                            counter++;
                             }
-
-
-                            sortedfiles.Add(sortedFile);
-                            sw.Close();
-
-                            Allsortedfiles.Add(sortedFile + " in " + Directory.GetDirectoryRoot(path));
+                        sw.Close();
+                       
+                            
+                            AllFile.Items.Add(sortedFile + " in " + Directory.GetDirectoryRoot(path));
+                            
                         }
                         else { MessageBox.Show("{0}  already eXists", Path.GetFileName(path)); }
                     }
 
-                    
-                 
 
-                    Sdir.DataSource = items;
-                    Sfile.DataSource = sortedfiles;
-                    AllFile.DataSource = Allsortedfiles;
 
-           }
-             
+                }
+
+                Sdir.Items.Add(Path.GetFullPath(filePath));
             }
-            
+               
+               
         }
       
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        private void Sdir_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            string filename = Sdir.SelectedItem.ToString();
+            MessageBox.Show(filename);
+            string[] sortedfilesArrayInselected = Directory.GetFiles(filename, "*Sorted*");
+            foreach(string longFilename in sortedfilesArrayInselected)
+            {
+                Sfile.Items.Add(Path.GetFileName(longFilename));
+            }
+          
         }
 
         
