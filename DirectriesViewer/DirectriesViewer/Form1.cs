@@ -128,18 +128,39 @@ namespace DirectriesViewer
                             continue;
                         }
                     }
+<<<<<<< HEAD
                     else if (Path.GetExtension(fileName) == ".calc")
                     {
                         AllFile.Items.Add(Path.GetFileName(fileName));
                     }
+=======
 
+                    else if (Path.GetExtension(fileName) == ".calc")
+                    {
+                        //StreamReader calcread = new StreamReader(fileName);
+                        string[] calcwords = File.ReadAllLines(fileName);
+                        foreach (string Calcword in calcwords)
+                        {
+                            calcfile.Add(Calculator.calculate(Calcword));
+                        }
+>>>>>>> 1b9eed89c0c8ea46dcb8a4696740f51229d872ab
 
+                    }
+                    StreamWriter calw = new StreamWriter(filePath + "\\Answ.answ");
+                    foreach (string calcitem in calcfile)
+                    {
+                        calw.WriteLine(calcitem);
+                    }
+                    calw.Close();
                 }
+<<<<<<< HEAD
 
 
+=======
+                Sdir.Items.Add(Path.GetFullPath(filePath));
+>>>>>>> 1b9eed89c0c8ea46dcb8a4696740f51229d872ab
             }
-               
-               
+
         }
       
         private void Sdir_SelectedIndexChanged(object sender, EventArgs e)

@@ -8,30 +8,7 @@ namespace DirectriesViewer
 {
     static class Program
     {
-        internal static Properties.Resources Resources
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
-
-        internal static Properties.Settings Settings
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
-
+        
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

@@ -32,4 +32,26 @@ C:\Users\user\Source\Repos\sandeepsukale\SoftwareCA\DirectriesViewer\DirectriesV
 C:\Users\user\Source\Repos\sandeepsukale\SoftwareCA\DirectriesViewer\DirectriesViewer\bin\Debug\Xamarin.Forms.Platform.pdb
 C:\Users\user\Source\Repos\sandeepsukale\SoftwareCA\DirectriesViewer\DirectriesViewer\bin\Debug\Xamarin.Forms.Xaml.pdb
 C:\Users\user\Source\Repos\sandeepsukale\SoftwareCA\DirectriesViewer\DirectriesViewer\bin\Debug\Xamarin.Forms.Xaml.xml
+<<<<<<< HEAD
 C:\Users\user\Source\Repos\sandeepsukale\SoftwareCA\DirectriesViewer\DirectriesViewer\obj\Debug\DirectriesViewer.SplashScreen.resources
+=======
+E:\SoftwareWindowProject\SoftwareCA\DirectriesViewer\DirectriesViewer\bin\Debug\DirectriesViewer.exe.config
+E:\SoftwareWindowProject\SoftwareCA\DirectriesViewer\DirectriesViewer\bin\Debug\DirectriesViewer.exe
+E:\SoftwareWindowProject\SoftwareCA\DirectriesViewer\DirectriesViewer\bin\Debug\DirectriesViewer.pdb
+E:\SoftwareWindowProject\SoftwareCA\DirectriesViewer\DirectriesViewer\bin\Debug\Xamarin.Forms.Core.dll
+E:\SoftwareWindowProject\SoftwareCA\DirectriesViewer\DirectriesViewer\bin\Debug\Xamarin.Forms.Platform.dll
+E:\SoftwareWindowProject\SoftwareCA\DirectriesViewer\DirectriesViewer\bin\Debug\Xamarin.Forms.Xaml.dll
+E:\SoftwareWindowProject\SoftwareCA\DirectriesViewer\DirectriesViewer\bin\Debug\Xamarin.Forms.Core.pdb
+E:\SoftwareWindowProject\SoftwareCA\DirectriesViewer\DirectriesViewer\bin\Debug\Xamarin.Forms.Core.xml
+E:\SoftwareWindowProject\SoftwareCA\DirectriesViewer\DirectriesViewer\bin\Debug\Xamarin.Forms.Platform.pdb
+E:\SoftwareWindowProject\SoftwareCA\DirectriesViewer\DirectriesViewer\bin\Debug\Xamarin.Forms.Xaml.pdb
+E:\SoftwareWindowProject\SoftwareCA\DirectriesViewer\DirectriesViewer\bin\Debug\Xamarin.Forms.Xaml.xml
+E:\SoftwareWindowProject\SoftwareCA\DirectriesViewer\DirectriesViewer\obj\Debug\DirectriesViewer.csprojAssemblyReference.cache
+E:\SoftwareWindowProject\SoftwareCA\DirectriesViewer\DirectriesViewer\obj\Debug\DirectriesViewer.Form1.resources
+E:\SoftwareWindowProject\SoftwareCA\DirectriesViewer\DirectriesViewer\obj\Debug\DirectriesViewer.Properties.Resources.resources
+E:\SoftwareWindowProject\SoftwareCA\DirectriesViewer\DirectriesViewer\obj\Debug\DirectriesViewer.csproj.GenerateResource.cache
+E:\SoftwareWindowProject\SoftwareCA\DirectriesViewer\DirectriesViewer\obj\Debug\DirectriesViewer.csproj.CoreCompileInputs.cache
+E:\SoftwareWindowProject\SoftwareCA\DirectriesViewer\DirectriesViewer\obj\Debug\DirectriesViewer.csproj.CopyComplete
+E:\SoftwareWindowProject\SoftwareCA\DirectriesViewer\DirectriesViewer\obj\Debug\DirectriesViewer.exe
+E:\SoftwareWindowProject\SoftwareCA\DirectriesViewer\DirectriesViewer\obj\Debug\DirectriesViewer.pdb
+>>>>>>> 1b9eed89c0c8ea46dcb8a4696740f51229d872ab
