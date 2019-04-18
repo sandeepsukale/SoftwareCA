@@ -60,8 +60,8 @@ namespace DirectriesViewer
                     {
                         
                         
-                        count = Count(wordToSearch, fileContentArray);
-                        listItems.Add($"{wordToSearch}  found in {Path.GetFileName(presentFile)} {count}times");
+                        //count = Count(wordToSearch, fileContentArray);
+                        listItems.Add($"{wordToSearch}  found in {Path.GetFileName(presentFile)} ");
                         //if (count > 1)
                         //{
 

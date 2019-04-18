@@ -30,13 +30,6 @@
       <SubType>Content</SubType>
       <DependentUpon>directory.sequencediagram</DependentUpon>
     </Content>
-    <Content Include="FSASequenceDiagram.sequencediagram">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="FSASequenceDiagram.sequencediagram.layout">
-      <SubType>Content</SubType>
-      <DependentUpon>FSASequenceDiagram.sequencediagram</DependentUpon>
-    </Content>
     <Content Include="ModelDefinition\ModelingProject1.uml">
       <SubType>Content</SubType>
     </Content>

@@ -174,9 +174,8 @@
             this.SearchBox.Name = "SearchBox";
             this.SearchBox.Size = new System.Drawing.Size(235, 20);
             this.SearchBox.TabIndex = 13;
-            this.SearchBox.Text = "Search Text";
             this.SearchBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.SearchBox.TextChanged += new System.EventHandler(this.SearchBox_TextChanged);
+            //this.SearchBox.TextChanged += new System.EventHandler(this.SearchBox_TextChanged());
             // 
             // Searchbutton
             // 
