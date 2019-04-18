@@ -32,3 +32,4 @@ C:\Users\user\Source\Repos\sandeepsukale\SoftwareCA\DirectriesViewer\DirectriesV
 C:\Users\user\Source\Repos\sandeepsukale\SoftwareCA\DirectriesViewer\DirectriesViewer\bin\Debug\Xamarin.Forms.Platform.pdb
 C:\Users\user\Source\Repos\sandeepsukale\SoftwareCA\DirectriesViewer\DirectriesViewer\bin\Debug\Xamarin.Forms.Xaml.pdb
 C:\Users\user\Source\Repos\sandeepsukale\SoftwareCA\DirectriesViewer\DirectriesViewer\bin\Debug\Xamarin.Forms.Xaml.xml
+C:\Users\user\Source\Repos\sandeepsukale\SoftwareCA\DirectriesViewer\DirectriesViewer\obj\Debug\DirectriesViewer.SplashScreen.resources
