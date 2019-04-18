@@ -51,7 +51,7 @@ namespace DirectriesViewer
                 operand = "^";
                 ans = Math.Pow(f, s);
             }
-            return (f + operand + s + " = " + Math.Round(ans, 2));
+            return ($"{f} {operand} {s } = { Math.Round(ans, 2)}");
         }
     }
 }

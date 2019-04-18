@@ -49,7 +49,8 @@ namespace DirectriesViewer
                 listItems=sortedfilesArray.ToList();
                 foreach (string presentFile in sortedfilesArray)
                 {
-                    string fileContent = File.ReadAllText(presentFile);string[] fileContentArray;
+                    string fileContent = File.ReadAllText(presentFile);
+                    string[] fileContentArray;
                     using(StreamReader sr= new StreamReader(presentFile))
                     {
                         fileContentArray= sr.ReadToEnd().Split(',');
@@ -92,7 +93,7 @@ namespace DirectriesViewer
                     else
                     {
                         listItems.Add(wordToSearch + " not found");
-                        continue;
+                        break;
                     }
 
                 }

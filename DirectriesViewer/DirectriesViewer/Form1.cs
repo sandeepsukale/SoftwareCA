@@ -23,15 +23,12 @@ namespace DirectriesViewer
         {
            
            label5.Text= char.ConvertFromUtf32(0x2193);
-
-            this.Sdir.SelectedIndexChanged += new EventHandler(Sdir_SelectedIndexChanged);
-
             
-
+            this.Sdir.SelectedIndexChanged += new EventHandler(Sdir_SelectedIndexChanged);
 
     }
       
-
+        List<string> SearchList = new List<string>();
         string filePath;
         private void button1_Click(object sender, EventArgs e)
         {
@@ -123,51 +120,31 @@ namespace DirectriesViewer
                             AllFile.Items.Add(Path.GetFileName(path) + " in " + Directory.GetDirectoryRoot(path));
 
                         }
-                        else {
+                      else {
                             MessageBox.Show("{0}  already eXists", Path.GetFileName(path));
-                            continue;
+                            break;
                         }
                     }
-<<<<<<< HEAD
                     else if (Path.GetExtension(fileName) == ".calc")
                     {
                         AllFile.Items.Add(Path.GetFileName(fileName));
                     }
-=======
 
-                    else if (Path.GetExtension(fileName) == ".calc")
-                    {
-                        //StreamReader calcread = new StreamReader(fileName);
-                        string[] calcwords = File.ReadAllLines(fileName);
-                        foreach (string Calcword in calcwords)
-                        {
-                            calcfile.Add(Calculator.calculate(Calcword));
-                        }
->>>>>>> 1b9eed89c0c8ea46dcb8a4696740f51229d872ab
 
-                    }
-                    StreamWriter calw = new StreamWriter(filePath + "\\Answ.answ");
-                    foreach (string calcitem in calcfile)
-                    {
-                        calw.WriteLine(calcitem);
-                    }
-                    calw.Close();
                 }
-<<<<<<< HEAD
 
 
-=======
-                Sdir.Items.Add(Path.GetFullPath(filePath));
->>>>>>> 1b9eed89c0c8ea46dcb8a4696740f51229d872ab
             }
-
+               
+               
         }
       
         private void Sdir_SelectedIndexChanged(object sender, EventArgs e)
         {
             Sfile.Items.Clear();
             string filename = Sdir.SelectedItem.ToString();
-            MessageBox.Show(filename);
+            displayText.Text= filename;
+            
             string[] sortedfilesArrayInselected = Directory.GetFiles(filename, "*Sorted*");
             foreach(string longFilename in sortedfilesArrayInselected)
             {
@@ -182,13 +159,15 @@ namespace DirectriesViewer
 
         }
 
+        
+
         private void Searchbutton_Click(object sender, EventArgs e)
         {
             
-            List<string> SearchList = new List<string>();
-            string[] listItems=new string[Sdir.Items.Count];
-           
-            for(int i=0; i < Sdir.Items.Count; i++)
+            
+            string[] listItems = new string[Sdir.Items.Count];
+
+            for (int i=0; i < Sdir.Items.Count; i++)
             {
                 listItems[i]= Sdir.Items[i].ToString();
             }
@@ -211,46 +190,60 @@ namespace DirectriesViewer
             Application.Exit();
         }
 
+        
         private void button2_Click(object sender, EventArgs e)
         {
             //string filename = Sdir.SelectedItem.ToString();
             List<string> calcItems = new List<string>();
-            
-            string[] calcfilesArray = Directory.GetFiles(filePath, "*.calc");
+            var dirs = Sdir.Items.Cast<String>().ToArray();
 
-            string answerName = DateTime.Now.ToString("MM/dd/yyyy HH:mm").Replace("/", "_").Replace(" ", "_").Replace(":", "_");
-            string simplifiedAnswName = $"currentData_{answerName}.answ";
-
-            foreach (string calFilename in calcfilesArray)
+            foreach (string dir in dirs)
             {
+                string[] calcfilesArray = Directory.GetFiles(dir, "*.calc");
 
+                string answerName = DateTime.Now.ToString("MM/dd/yyyy HH:mm").Replace("/", "_").Replace(" ", "_").Replace(":", "_");
+                string simplifiedAnswName = $"currentData_{answerName}.answ";
 
-                string[] calcwords = File.ReadAllLines(calFilename);
-                foreach (string Calcword in calcwords)
+                foreach (string calFilename in calcfilesArray)
                 {
-                    calcItems.Add(Calculator.calculate(Calcword));
-                    MessageBox.Show(calcItems.ToString(), "List in Item LISt");
+
+
+                    string[] calcwords = File.ReadAllLines(calFilename);
+                    foreach (string Calcword in calcwords)
+                    {
+                        calcItems.Add(Calculator.calculate(Calcword));
+                        MessageBox.Show(calcItems.ToString(), "List in Item LISt");
+                    }
+
+
                 }
-               
-                //MessageBox.Show(answerName);
-                //StreamWriter calw = new StreamWriter(filePath + "\\" + simplifiedAnswName);
-                //calw.WriteAsync                                                                                                                                                                                                                                                                                                     
-                //foreach (string calcitem in calcItems)
-                //{
-                //    MessageBox.Show(calcitem);
-                //    calw.WriteLine(calcitem);
-                //}
-               // calw.Close();
+                File.WriteAllLines(filePath + "\\" + simplifiedAnswName, calcItems.ToArray());
+                MessageBox.Show($"Answers to the calculated file is written into  {simplifiedAnswName} \n of {Path.GetFullPath(dir)} ", "Calculated!!!");
             }
-            File.WriteAllLines(filePath + "\\" + simplifiedAnswName, calcItems.ToArray());
 
 
 
 
-            MessageBox.Show($"Answers to the calculated file is written into  {simplifiedAnswName} \n of ","Calculated!!!");
-        
+
+            
+
         }
 
-   
+        private void SearchBox_TextChanged(object sender, EventArgs e)
+        {
+          
+            TextBox s = (TextBox)sender;
+
+            AllFile.Items.Clear();
+            //var itemInAllFile = AllFile.Items;
+            foreach (string value in SearchList)
+            {
+                if (value.IndexOf(s.Text, StringComparison.OrdinalIgnoreCase) >= 0)
+                {
+                    AllFile.Items.Add(value);
+                }
+            }
+        
+    }
     }
 }

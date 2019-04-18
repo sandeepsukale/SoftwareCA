@@ -77,6 +77,7 @@
             // 
             // displayText
             // 
+            this.displayText.Enabled = false;
             this.displayText.Font = new System.Drawing.Font("Minion Pro SmBd", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.displayText.Location = new System.Drawing.Point(180, 103);
             this.displayText.Name = "displayText";
@@ -175,6 +176,7 @@
             this.SearchBox.TabIndex = 13;
             this.SearchBox.Text = "Search Text";
             this.SearchBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.SearchBox.TextChanged += new System.EventHandler(this.SearchBox_TextChanged);
             // 
             // Searchbutton
             // 
